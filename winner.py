@@ -1,12 +1,22 @@
-Ele=[]
-size=int(input())
-for i in range(size):
-     Ele.append(int(input()))
-count=0
-i=0
-for i in range(size+1):
-    count+=1
-    if(count%4==0 or count%10==4):
-        print("the winner is:",Ele.pop(i))
-    if(i==size):
+# Winner problem 
+lst=list(map(str,input().split()))
+size=len(lst)
+def winner(lst):
+  count=1
+  i=0
+  while not len(lst)==1:
+    if i==len(lst):
       i=0
+    if count==5:
+      count=1
+    if count<5 and i<len(lst):
+      if count==4: # and (((i+1)%4==0) or ((i+1)%10==4)):
+        lst.pop(i)
+        #i+=1
+        count+=1
+        #print(lst)
+      else:
+        i+=1
+        count+=1
+  return lst[0]
+winner(lst)
