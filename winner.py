@@ -10,11 +10,9 @@ def winner(lst):
     if count==5:
       count=1
     if count<5 and i<len(lst):
-      if count==4: # and (((i+1)%4==0) or ((i+1)%10==4)):
+      if count==4:
         lst.pop(i)
-        #i+=1
         count+=1
-        #print(lst)
       else:
         i+=1
         count+=1
