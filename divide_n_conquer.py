@@ -1,6 +1,3 @@
-from recursive import Ele
-
-
 def merge_sort(arr):
     # overflow
     if len(arr) <= 1:
